@@ -1,12 +1,15 @@
 import { Outlet } from "react-router-dom";
+import Navbar from "../../components/Navbar";
 
 function Root() {
 	return (
 		<>
 			<header>
-				<h1>blogX</h1>
+				<Navbar />
 			</header>
-			<Outlet />
+			<main>
+				<Outlet />
+			</main>
 		</>
 	);
 }
