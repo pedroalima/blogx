@@ -7,11 +7,14 @@ import Home from "./routes/Home";
 import NewPost from "./routes/NewPost";
 
 // Style
+import { ThemeProvider } from "styled-components";
+import { theme } from "./styles/theme";
 import { GlobalStyle } from "./styles/global";
+
 
 function App() {
 	return (
-		<>
+		<ThemeProvider theme={theme}>
 			<RouterProvider router={createBrowserRouter(createRoutesFromElements(
 				<Route path="/" element={ <Root /> }>
 					<Route path="/" element={ <Home />} />
@@ -19,7 +22,7 @@ function App() {
 				</Route>
 			))} />
 			<GlobalStyle />
-		</>
+		</ThemeProvider>
 	);
 }
 
