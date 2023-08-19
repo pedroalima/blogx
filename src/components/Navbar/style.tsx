@@ -22,7 +22,6 @@ export const Button = styled.button`
     background: none;
     border: none;
     padding: 0.5rem 1rem;
-
     svg {
         color: ${(prop) => prop.theme.colors.primary};
     }
