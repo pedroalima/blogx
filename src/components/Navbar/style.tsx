@@ -9,7 +9,7 @@ export const NavWrapper = styled.nav`
 
     .active {
         svg {
-            color: ${(prop) => prop.theme.effects.primary};
+            color: ${(prop) => prop.theme.colors.primary};
         }
     }
 `;
@@ -29,12 +29,13 @@ export const Button = styled.button`
     border: none;
     padding: 0.5rem 1rem;
     svg {
-        color: ${(prop) => prop.theme.colors.primary};
+        color: ${(prop) => prop.theme.effects.primary};
     }
 
     &:hover {
+        cursor: pointer;
         svg {
-            color: ${(prop) => prop.theme.effects.primary};
+            color: ${(prop) => prop.theme.colors.primary};
         }
     }
 
