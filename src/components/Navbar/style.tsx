@@ -6,6 +6,12 @@ export const NavWrapper = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .active {
+        svg {
+            color: ${(prop) => prop.theme.effects.primary};
+        }
+    }
 `;
 
 export const Logo = styled.h1`
