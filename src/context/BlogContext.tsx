@@ -1,7 +1,8 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 import axios from "axios";
+import { BlogContextPosts } from "./type";
 
-export const BlogContext = createContext({});
+export const BlogContext = createContext<BlogContextPosts>({} as BlogContextPosts);
 
 export const BlogProvider = ({ children } : { children: ReactNode}) => {
 	const [ posts, setPosts ] = useState([]);

@@ -8,6 +8,7 @@ export const theme = {
 	effects: {
 		primary: "rgb(173, 173, 173)",
 		secondary: "rgb(66, 95, 213)",
+		tertiary: "rgb(51, 56, 62)",
 	},
 	font: {
 		primary: "Merriweather, Helvetica, sans-serif",

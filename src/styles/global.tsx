@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         background: ${(prop) => prop.theme.colors.secondary};
         font-family: ${(prop => prop.theme.font.primary)};
