@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const HomeWrapper = styled.div`
+export const HomeWrapper = styled.article`
     margin: 1.5rem 0;
     padding: 1.5rem;
     background: ${(props) => props.theme.colors.tertiary};

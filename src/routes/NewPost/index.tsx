@@ -1,8 +1,14 @@
+import { TitleWrapper } from "../Home/style";
+import { PostWrapper } from "./style";
 
 
 function NewPost() {
 	return (
-		<div>NewPost</div>
+		<section>
+			<PostWrapper>
+				<TitleWrapper>Create your post</TitleWrapper>
+			</PostWrapper>
+		</section>
 	);
 }
 

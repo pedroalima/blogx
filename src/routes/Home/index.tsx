@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { useBlog } from "../../hook/useBlog";
 import { DescriptionWrapper, HomeWrapper, TitleWrapper } from "./style";
 import { Post } from "./type";
-import { Button } from "../../components/Button/style";
+import { Button } from "../../components/Button";
+
 
 function Home() {
 	const { posts } = useBlog();
@@ -16,7 +17,7 @@ function Home() {
 					<TitleWrapper>{post.title}</TitleWrapper>
 					<DescriptionWrapper>{post.body}</DescriptionWrapper>
 					<Link to={`/post/${post.id}`}>
-						<Button>Reade more</Button>
+						<Button Text="Reade more" />
 					</Link>
 				</HomeWrapper>
 			))}
