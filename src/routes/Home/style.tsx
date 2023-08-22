@@ -6,15 +6,6 @@ export const HomeWrapper = styled.div`
     background: ${(props) => props.theme.colors.tertiary};
     border-radius: 10px;
 
-    a {
-        text-decoration: none;
-        color: ${(props) => props.theme.effects.primary};
-        
-        &:hover {
-        color: ${(props) => props.theme.colors.primary};
-        }
-    }
-
     &:hover {
         background: ${(props) => props.theme.effects.tertiary};
     }
