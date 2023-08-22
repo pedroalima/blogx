@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import axios from "axios";
+import blogAxios from "../axios/config";
 import { BlogContextPosts } from "./type";
 
 export const BlogContext = createContext<BlogContextPosts>({} as BlogContextPosts);
@@ -13,7 +13,7 @@ export const BlogProvider = ({ children } : { children: ReactNode}) => {
 
 	const getPosts = async () => {
 		try {
-			const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
+			const response = await blogAxios.get("/posts");
 			const data = response.data;
 
 			setPosts(data);

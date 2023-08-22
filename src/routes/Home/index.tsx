@@ -14,7 +14,7 @@ function Home() {
 				<HomeWrapper key={post.id}>
 					<TitleWrapper>{post.title}</TitleWrapper>
 					<DescriptionWrapper>{post.body}</DescriptionWrapper>
-					<Link to={`/new/${post.id}`}>Reade more</Link>
+					<Link to={`/post/${post.id}`}>Reade more</Link>
 				</HomeWrapper>
 			))}
 		</section>
