@@ -22,8 +22,12 @@ export const BlogProvider = ({ children } : { children: ReactNode}) => {
 		}
 	};
 
+	const pushPost = async (body: object) => {
+		await blogAxios.post("/posts", body);
+	};
+
 	return (
-		<BlogContext.Provider value={{posts}}>
+		<BlogContext.Provider value={{posts, pushPost}}>
 			{children}
 		</BlogContext.Provider>
 	);
