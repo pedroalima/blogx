@@ -14,6 +14,7 @@ export const HomeWrapper = styled.article`
 export const TitleWrapper = styled.h2`
     font-size: ${(props) => props.theme.fontSize.secondary};
     color: ${(props) => props.theme.colors.primary};
+    margin-bottom: 0.5rem
 `;
 
 export const DescriptionWrapper = styled.p`
