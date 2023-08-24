@@ -22,10 +22,3 @@ export const FormWrapper = styled.form`
     flex-direction: column;
     align-items: start;
 `;
-
-export const TextArea = styled.textarea`
-    margin: 0.5rem 0;
-    padding: 0.2rem 0.5rem;
-    width: 100%;
-    height: 20vh
-`;

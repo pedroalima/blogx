@@ -1,10 +1,10 @@
 import { FormEvent, ChangeEvent, useState } from "react";
-import { Button } from "../../components/Button";
+import { ButtonMUI } from "../../components/Button";
 import { Input } from "../../components/Input";
-import { Label } from "../../components/Label";
 import { useBlog } from "../../hook/useBlog";
 import { TitleWrapper } from "../Home/style";
-import { FormWrapper, NewPostSection, PostWrapper, TextArea } from "./style";
+import { FormWrapper, NewPostSection, PostWrapper } from "./style";
+import { TextField } from "@mui/material";
 
 function NewPost() {
 	const { pushPost } = useBlog();
@@ -23,29 +23,25 @@ function NewPost() {
 		pushPost(bodyPost);
 	};
 
-	console.log(title);
-	console.log(body);
-
 	return (
 		<NewPostSection>
 			<PostWrapper>
 				<TitleWrapper>Create your post</TitleWrapper>
 				<FormWrapper onSubmit={addNewPost}>
-					<Label htmlFor="title" Text="Title: " />
 					<Input 
 						Type="text" 
-						id="title" 
 						placeholder="Insert the title"
 						value={title} 
 						onChange={(e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
 					/>
-					<Label htmlFor="content" Text="Content: " />
-					<TextArea 
+					<TextField 
+						label="Content"
+						multiline
+						rows={4}
 						placeholder="Insert the content"
-						id="content"
 						onChange={(e) => setBody(e.target.value)}
 					/>
-					<Button Type="submit" Text="Send" />
+					<ButtonMUI Type="submit" Text="Send" />
 				</FormWrapper>
 			</PostWrapper>
 		</NewPostSection>

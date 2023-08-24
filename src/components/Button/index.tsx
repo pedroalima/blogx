@@ -1,10 +1,10 @@
-import * as C from "./style";
+import { Button } from "@mui/material";
 import { ButtonType } from "./type";
 
-export const Button = ({ Text, onClick, Type = "button" } : ButtonType) => {
+export const ButtonMUI = ({ Text, onClick, Type = "button" } : ButtonType) => {
 	return (
-		<C.Button type={Type} onClick={onClick}>
+		<Button variant="contained" type={Type} onClick={onClick}>
 			{Text}
-		</C.Button>
+		</Button>
 	);
 };
