@@ -11,6 +11,8 @@ export const PostWrapper = styled.section`
     background: ${(props) => props.theme.colors.tertiary};
     border-radius: 10px;
     width: 50%;
+    height: 320px;
+    
 
     &:hover {
         background: ${(props) => props.theme.effects.tertiary};
@@ -18,7 +20,9 @@ export const PostWrapper = styled.section`
 `;
 
 export const FormWrapper = styled.form`
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: start;
+    justify-content: space-between;
 `;
