@@ -7,7 +7,7 @@ import { FormWrapper, NewPostSection, PostWrapper } from "./style";
 import { TextField } from "@mui/material";
 
 function NewPost() {
-	const { pushPost } = useBlog();
+	const { createPost } = useBlog();
 	const [title, setTitle] = useState<string>("");
 	const [body, setBody] = useState<string>("");
 
@@ -20,7 +20,7 @@ function NewPost() {
 	const addNewPost = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
-		pushPost(bodyPost);
+		createPost(bodyPost);
 	};
 
 	return (
