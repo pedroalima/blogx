@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import { useBlog } from "../../hook/useBlog";
-import { DescriptionWrapper, HomeWrapper, TitleWrapper } from "./style";
+import { ButtonWrapper, DescriptionWrapper, HomeWrapper, TitleWrapper } from "./style";
 import { Post } from "./type";
 import { ButtonMUI } from "../../components/Button";
 
-
 function Home() {
-	const { posts } = useBlog();
+	const { posts, deletePost } = useBlog();
 
 	return (
 		<section>
@@ -16,9 +15,12 @@ function Home() {
 				<HomeWrapper key={post.id}>
 					<TitleWrapper>{post.title}</TitleWrapper>
 					<DescriptionWrapper>{post.body}</DescriptionWrapper>
-					<Link to={`/post/${post.id}`}>
-						<ButtonMUI Text="Reade more" />
-					</Link>
+					<ButtonWrapper>
+						<Link to={`/post/${post.id}`}>
+							<ButtonMUI Text="Reade more" />
+						</Link>
+						<ButtonMUI Text="Delete" onClick={() => deletePost(post.id)}/>
+					</ButtonWrapper>
 				</HomeWrapper>
 			))}
 		</section>

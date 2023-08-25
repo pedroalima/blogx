@@ -26,8 +26,12 @@ export const BlogProvider = ({ children } : { children: ReactNode}) => {
 		await blogAxios.post("/posts", body);
 	};
 
+	const deletePost = async (id: number) => {
+		await blogAxios.delete(`/posts/${id}`);
+	};
+
 	return (
-		<BlogContext.Provider value={{posts, createPost}}>
+		<BlogContext.Provider value={{posts, createPost, deletePost}}>
 			{children}
 		</BlogContext.Provider>
 	);
