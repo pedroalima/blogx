@@ -4,8 +4,12 @@ function Post() {
 	const { post } = useBlog();
 
 	console.log(post);
+    
 	return (
-		<div>Post</div>
+		<div>
+			{/* <h2>{post.title}</h2>
+			<p>{post.body}</p> */}
+		</div>
 	);
 }
 
