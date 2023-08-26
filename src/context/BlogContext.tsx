@@ -6,6 +6,7 @@ export const BlogContext = createContext<BlogContextPosts>({} as BlogContextPost
 
 export const BlogProvider = ({ children } : { children: ReactNode}) => {
 	const [ posts, setPosts ] = useState([]);
+	const [ post, setPost ] = useState([]);
 
 	useEffect(()=> {
 		getAllPosts();
@@ -22,13 +23,16 @@ export const BlogProvider = ({ children } : { children: ReactNode}) => {
 		}
 	};
 
-	// const getPost = async (id: number) => {
-	// 	try {
-	// 		const response = await blogAxios.get(`/posts/${id}`);
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 	}
-	// };
+	const getPost = async (id: number) => {
+		try {
+			const response = await blogAxios.get(`/posts/${id}`);
+			const data = response.data;
+
+			setPost(data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
 	const createPost = async (body: object) => {
 		await blogAxios.post("/posts", body);
@@ -43,7 +47,7 @@ export const BlogProvider = ({ children } : { children: ReactNode}) => {
 	};
 
 	return (
-		<BlogContext.Provider value={{posts, createPost, deletePost, updatePost}}>
+		<BlogContext.Provider value={{posts, createPost, deletePost, updatePost, getPost, post}}>
 			{children}
 		</BlogContext.Provider>
 	);

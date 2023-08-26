@@ -10,6 +10,7 @@ import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } 
 import Root from "./routes/Root";
 import Home from "./routes/Home";
 import NewPost from "./routes/NewPost";
+import Post from "./routes/Post";
 
 // Context
 import { BlogProvider } from "./context/BlogContext";
@@ -22,6 +23,7 @@ function App() {
 					<Route path="/" element={ <Root /> }>
 						<Route path="/" element={ <Home />} />
 						<Route path="/new" element={<NewPost />} />
+						<Route path="/post/:id" element={<Post />} />
 					</Route>
 				))} />
 				<GlobalStyle />
