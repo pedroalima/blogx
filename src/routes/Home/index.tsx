@@ -5,13 +5,7 @@ import { Post } from "./type";
 import { ButtonMUI } from "../../components/Button";
 
 function Home() {
-	const { posts, deletePost, updatePost, getPost } = useBlog();
-
-	const updateBody = {
-		id: 2,
-		title: "teste",
-		body: "teste"
-	};
+	const { posts, getPost } = useBlog();
 
 	return (
 		<section>
@@ -25,8 +19,6 @@ function Home() {
 						<Link to={`/post/${post.id}`}>
 							<ButtonMUI Text="Reade more" onClick={()=> getPost(post.id)} />
 						</Link>
-						<ButtonMUI Text="Update" onClick={() => updatePost(post.id, updateBody)}/>
-						<ButtonMUI Text="Delete" onClick={() => deletePost(post.id)}/>
 					</ButtonWrapper>
 				</HomeWrapper>
 			))}

@@ -7,4 +7,13 @@ export type BlogContextPosts = {
     updatePost: (id: number, body: object) => void;
     getPost: (id: number) => void;
     post: Post[];
-}
+};
+
+export type PostType = [
+	{
+		id: number;
+		title: string;
+		body: string;
+		userId: number;
+	}
+];

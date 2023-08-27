@@ -1,12 +1,12 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 import blogAxios from "../axios/config";
-import { BlogContextPosts } from "./type";
+import { BlogContextPosts, PostType } from "./type";
 
 export const BlogContext = createContext<BlogContextPosts>({} as BlogContextPosts);
 
 export const BlogProvider = ({ children } : { children: ReactNode}) => {
 	const [ posts, setPosts ] = useState([]);
-	const [ post, setPost ] = useState([]);
+	const [ post, setPost ] = useState<PostType | []>([]);
 
 	useEffect(()=> {
 		getAllPosts();
@@ -28,7 +28,7 @@ export const BlogProvider = ({ children } : { children: ReactNode}) => {
 			const response = await blogAxios.get(`/posts/${id}`);
 			const data = response.data;
 
-			setPost(data);
+			setPost([data]);
 		} catch (error) {
 			console.log(error);
 		}
