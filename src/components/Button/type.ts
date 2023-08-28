@@ -1,5 +1,5 @@
 export interface ButtonType {
     Text: string;
-    onClick?: (id: number) => void;
+    onClick?: () => void;
     Type?: "button" | "submit" | "reset" | undefined;
 }
