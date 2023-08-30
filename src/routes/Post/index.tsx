@@ -15,13 +15,6 @@ function Post() {
 	const [edit, setEdit] = useState(false);
 	const navigate = useNavigate();
 
-	const updateBody = {
-		id: post[0].id,
-		title: title,
-		body: body
-	};
-
-
 	const toggleButtonEdit = () => {
 		setTitle(post[0].title);
 		setBody(post[0].body);
@@ -29,7 +22,11 @@ function Post() {
 	};
 
 	const editPost = () => {
-		updatePost(post[0].id, updateBody);
+		updatePost(post[0].id, {
+			id: post[0].id,
+			title: title,
+			body: body
+		});
 		setEdit(!edit);
 	};
 

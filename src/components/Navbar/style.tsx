@@ -2,10 +2,15 @@ import { styled } from "styled-components";
 
 export const NavWrapper = styled.nav`
     background: ${(prop) => prop.theme.colors.tertiary};
-    padding: 1.5rem 10vw;
+    padding: 0.5rem 2rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+
+    @media screen and (min-width: 698px) {
+        padding: 1.5rem 10vw;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     .active {
         svg {
@@ -19,7 +24,6 @@ export const Logo = styled.h1`
 `;
 
 export const ButtonsWrapper = styled.div`
-    width: 15%;
     display: flex;
     justify-content: space-between;
 `;

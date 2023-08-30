@@ -10,8 +10,11 @@ export const PostWrapper = styled.section`
     padding: 1.5rem;
     background: ${(props) => props.theme.colors.tertiary};
     border-radius: 10px;
-    width: 50%;
-    
+    width: 100%;
+
+    @media screen and (min-width: 698px) {
+        width: 50%;
+    }
 
     &:hover {
         background: ${(props) => props.theme.effects.tertiary};

@@ -5,14 +5,16 @@ import { useBlog } from "../../hook/useBlog";
 import { TitleWrapper } from "../Home/style";
 import { FormWrapper, NewPostSection, PostWrapper } from "./style";
 import { TextField } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function NewPost() {
 	const { createPost } = useBlog();
 	const [title, setTitle] = useState<string>("");
 	const [body, setBody] = useState<string>("");
+	const navigate = useNavigate();
 
 	const bodyPost = {
-		body: { 
+		body: {
 			post: { title, body, user: 1 }
 		}
 	};
@@ -21,6 +23,7 @@ function NewPost() {
 		e.preventDefault();
 
 		createPost(bodyPost);
+		navigate("/");
 	};
 
 	return (
