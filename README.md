@@ -58,10 +58,7 @@ Dessa forma, ao utilizarmos a instância "blogAxios", ganhamos acesso aos métod
 
 Para conferir a versão final é só acessar o link: 💻<https://blogx-flame.vercel.app/>.
 
-<video width="640" height="360" controls autoplay>
-    <source src="./public/put.mp4" type="video/mp4">
-    Seu navegador não suporta o elemento de vídeo.
-</video>
+<img src="./public/mobile.gif" height="500">
 
 </br>
 
